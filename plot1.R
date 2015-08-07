@@ -3,7 +3,7 @@
 #####################################
 
 ##only active on my own computer
-setwd("C:/Users/Aletta/Documents/_ALLEFILES/LOCALREPO/ExData_Plotting1/ExData_Plotting1")
+##setwd("C:/Users/Aletta/Documents/_ALLEFILES/LOCALREPO/ExData_Plotting1/ExData_Plotting1")
 
 
 ############################
