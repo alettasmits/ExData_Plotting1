@@ -50,14 +50,19 @@ subsetFeb1207 <- transform(subsetFeb1207, timestamp=as.POSIXct(paste(Date, Time)
 ##PLOT THE THING
 ##############################
 
-##so finally, function plot1: 
-##a histogram of Global Active Power (red bars)
-##with the main title: "Global Active Power" and x-label: "Global Active Power (kilowatts)"
-plot1 <- function() {
-  png("plot1.png")
-  hist(subsetFeb1207$Global_active_power, col ="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+##so finally, function plot4: 
+plot4 <- function() {
+  png("plot4.png")
+  Sys.setlocale("LC_TIME", "English")
+  par(mfrow = c(2,2))
+  plot(subsetFeb1207$timestamp, subsetFeb1207$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)")
+  plot(subsetFeb1207$timestamp, subsetFeb1207$Voltage, type="l", xlab="datetime", ylab="Voltage")
+  plot(subsetFeb1207$timestamp, subsetFeb1207$Sub_metering_1, type="l", xlab="", ylab="Energy Submetering")
+  lines(subsetFeb1207$timestamp, subsetFeb1207$Sub_metering_2, col="red")
+  lines(subsetFeb1207$timestamp, subsetFeb1207$Sub_metering_3, col="blue")
+  legend("topright", bty="n", cex = 0.8, pt.cex=0.8, col = c("black", "red", "blue"), c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1), lwd=c(1,1))
+  plot(subsetFeb1207$timestamp, subsetFeb1207$Global_reactive_power, type="l", xlab="datetime", ylab=colnames(subsetFeb1207[4]))
   dev.off()
 }
-plot1()
-
+plot4()
 

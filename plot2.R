@@ -3,7 +3,7 @@
 #####################################
 
 ##only active on my own computer
-setwd("C:/Users/Aletta/Documents/_ALLEFILES/LOCALREPO/ExData_Plotting1/ExData_Plotting1")
+##setwd("C:/Users/Aletta/Documents/_ALLEFILES/LOCALREPO/ExData_Plotting1/ExData_Plotting1")
 
 
 ############################
@@ -51,8 +51,6 @@ subsetFeb1207 <- transform(subsetFeb1207, timestamp=as.POSIXct(paste(Date, Time)
 ##############################
 
 ##so finally, function plot2: 
-##a histogram of Global Active Power (red bars)
-##with the main title: "Global Active Power" and x-label: "Global Active Power (kilowatts)"
 plot2 <- function() {
   png("plot2.png")
   ##have to make sure the days of the week appear as "thu", "fri", "sat" and not in Dutch translation
